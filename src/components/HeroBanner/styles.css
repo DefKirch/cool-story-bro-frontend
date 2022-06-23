@@ -1,7 +1,8 @@
 .hero-banner {
   width: 100%;
-  background-color: aliceblue;
+  background-color: rgba(26, 59, 88, 0.63);
   min-height: 200px;
   padding-top: 60px;
   padding-left: 100px;
+  color: white;
 }

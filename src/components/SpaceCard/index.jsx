@@ -8,12 +8,8 @@ const SpaceCard = ({ id, title, description, backgroundColor, color }) => {
       <div className="SpaceCard" style={{ backgroundColor, color }}>
         <h3>{title}</h3>
         <p>{description}</p>
-        <p>Key:{id}</p>
         <div>
-          <Link
-            to={`/spaces/${id}`}
-            style={{ backgroundColor: "#1dbfbf", color: "white" }}
-          >
+          <Link className="SpaceCard-Link" to={`/spaces/${id}`}>
             Visit Space
           </Link>
         </div>

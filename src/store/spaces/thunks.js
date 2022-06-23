@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setSpaces } from "./slice";
+import { setSpaces, setSpaceWithStories } from "./slice";
 const URL = "HTTP://localhost:4000";
 // Setup the thunk to send a get request to the / endpoint
 // dispatch the response to the spaces slice
@@ -8,9 +8,18 @@ const URL = "HTTP://localhost:4000";
 
 export const fetchSpaces = () => async (dispatch, getState) => {
   try {
-    const spacesResponse = await axios.get(`${URL}`);
+    const response = await axios.get(`${URL}`);
     // console.log(spacesResponse.data);
-    dispatch(setSpaces(spacesResponse.data));
+    dispatch(setSpaces(response.data));
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+export const fetchSpaceWithStories = (id) => async (dispatch, getState) => {
+  try {
+    const response = await axios.get(`${URL}/spaces/${id}`);
+    dispatch(setSpaceWithStories(response.data));
   } catch (e) {
     console.log(e.message);
   }
