@@ -12,11 +12,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
 import HeroBanner from "./components/HeroBanner";
+import SpacesPage from "./pages/SpacesPage";
+import SpaceDetailPage from "./pages/SpaceDetailPage";
 
 const Home = () => (
-  <HeroBanner>
-    <h1>Home</h1>
-  </HeroBanner>
+  <>
+    <HeroBanner>
+      <h1>Spaces</h1>
+    </HeroBanner>
+    <SpacesPage />
+  </>
 );
 const Other = () => (
   <HeroBanner>
@@ -39,6 +44,7 @@ function App() {
       {isLoading ? <Loading /> : null}
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/spaces/:id" element={<SpaceDetailPage />} />
         <Route path="/other" element={<Other />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
