@@ -10,8 +10,11 @@ export const spacesSlice = createSlice({
   initialState,
   reducers: {
     setSpaces: (state, action) => {
-      state.spaces = action.payload;
-      //   console.log("Slice", action.payload);
+      if (state.spaces) {
+        state.spaces = [...state.spaces, action.payload];
+      } else {
+        state.spaces = action.payload;
+      }
     },
     setSpaceWithStories: (state, action) => {
       state.spaceWithStories = action.payload;

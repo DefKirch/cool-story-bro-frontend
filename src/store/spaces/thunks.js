@@ -9,7 +9,7 @@ const URL = "HTTP://localhost:4000";
 export const fetchSpaces = () => async (dispatch, getState) => {
   try {
     const response = await axios.get(`${URL}`);
-    // console.log(spacesResponse.data);
+    console.log(response.data);
     dispatch(setSpaces(response.data));
   } catch (e) {
     console.log(e.message);

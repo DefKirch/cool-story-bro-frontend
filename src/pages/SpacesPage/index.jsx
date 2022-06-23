@@ -8,9 +8,12 @@ import "./styles.css";
 const SpacesPage = () => {
   const dispatch = useDispatch();
   const spaces = useSelector(selectSpaces);
+
   useEffect(() => {
-    dispatch(fetchSpaces());
-  }, [dispatch]);
+    if (!spaces) {
+      dispatch(fetchSpaces());
+    }
+  }, []);
 
   return (
     <div>
