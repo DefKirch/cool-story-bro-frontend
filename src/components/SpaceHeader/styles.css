@@ -1,0 +1,28 @@
+.Space-Header {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.No-Button-Style {
+    display: flex;
+    border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+    align-items: baseline;
+    flex-direction: row-reverse;
+}
+
+.Edit-Post-Container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Edit-Post-Container p {
+    margin-left: 0.5rem;
+    color: pink;
+}
+
+.Edit-Post-Container p:hover {
+    color: darkred;
+    cursor: pointer;
+   }

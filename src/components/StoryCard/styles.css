@@ -11,7 +11,7 @@
 }
 
 .StoryCard h3 {
-margin-bottom: 2rem;    
+    margin-bottom: 2rem;    
 }
 
 .StoryCard-Content {
@@ -19,11 +19,11 @@ margin-bottom: 2rem;
 }
 
 .StoryCard-Image {
-width: auto;
-height: auto;
-max-width: 40rem;
-max-height: 25rem;
-margin-left: 5rem;
+    width: auto;
+    height: auto;
+    max-width: 40rem;
+    max-height: 25rem;
+    margin-left: 5rem;
 }
 
 .Delete-Button-Container {

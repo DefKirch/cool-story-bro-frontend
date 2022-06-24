@@ -1,0 +1,53 @@
+.New-Story-Container {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(210, 225, 248, 0.98);
+    width: 100%;
+    height: 30rem;
+    justify-content: center;
+}
+
+.Form-Row {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.Forms-Container {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+.Forms-Container input {
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+}
+
+.Preview-Image {
+    width: auto;
+    height: auto;
+    max-width: 15rem;
+    max-height: 20rem;
+}
+
+.Image-Preview-Placeholder {
+    display: flex;
+    background-color: grey;
+    width: 8rem;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.Post-Button-Container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}

@@ -5,8 +5,10 @@ import { fetchMySpace, deleteStory } from "../../store/spaces/thunks";
 import StoryCard from "../../components/StoryCard";
 import { useState, useEffect } from "react";
 import SpaceHeader from "../../components/SpaceHeader";
+import NewStoryForm from "../../components/NewStoryForm";
 const MySpacePage = () => {
   const [sortedStories, setSortedStories] = useState([]);
+  const [creatingNewStory, setCreatingNewStory] = useState(false);
   const Me = useSelector(selectMe);
   const dispatch = useDispatch();
 
@@ -19,13 +21,16 @@ const MySpacePage = () => {
     dispatch(deleteStory(id));
   };
 
+  const displayNewPostComponent = () => {
+    setCreatingNewStory(!creatingNewStory);
+  };
   useEffect(() => {
     if (Me) {
       sortStoriesByDate();
     }
   }, [Me, dispatch]);
 
-  console.log("Me:", Me);
+  //   console.log("Me:", Me);
   useEffect(() => {
     dispatch(fetchMySpace());
   }, [dispatch]);
@@ -42,9 +47,16 @@ const MySpacePage = () => {
               description={Me.mySpace.desccription}
               bgColor={Me.mySpace.backgroundColor}
               color={Me.mySpace.color}
+              displayNewPostComponent={displayNewPostComponent}
             />
           </div>
-
+          {creatingNewStory ? (
+            <div>
+              <NewStoryForm toggleForm={displayNewPostComponent} />
+            </div>
+          ) : (
+            ""
+          )}
           {sortedStories.map((story) => {
             return (
               <StoryCard
