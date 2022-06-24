@@ -76,7 +76,7 @@ export const login = (email, password) => {
           setMessage({
             variant: "danger",
             dismissable: true,
-            text: error.response.data.message,
+            // text: error.response.data.message,
           })
         );
       }

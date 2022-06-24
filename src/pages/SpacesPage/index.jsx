@@ -13,7 +13,7 @@ const SpacesPage = () => {
     if (!spaces) {
       dispatch(fetchSpaces());
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

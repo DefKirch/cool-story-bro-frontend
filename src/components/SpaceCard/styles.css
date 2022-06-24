@@ -6,12 +6,18 @@
 .SpaceCard {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     justify-content: left;
     width: 40rem;
     margin: 2rem 0;
-    /* border-radius: 1rem; */
     padding: 1rem;
+}
+
+.SpaceCard p {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 6rem;
 }
 
 .SpaceCard-Link {

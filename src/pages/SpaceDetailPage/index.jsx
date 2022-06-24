@@ -1,4 +1,3 @@
-import HeroBanner from "../../components/HeroBanner";
 import StoryCard from "../../components/StoryCard";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,7 +21,7 @@ const SpaceDetailPage = () => {
     if (oneSpace) {
       sortStoriesByDate();
     }
-  }, [oneSpace]);
+  }, [oneSpace, dispatch]);
 
   useEffect(() => {
     dispatch(fetchSpaceWithStories(id));

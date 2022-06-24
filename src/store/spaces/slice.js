@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   spaces: null,
   spaceWithStories: null,
+  me: null,
 };
 
 export const spacesSlice = createSlice({
@@ -19,9 +20,12 @@ export const spacesSlice = createSlice({
     setSpaceWithStories: (state, action) => {
       state.spaceWithStories = action.payload;
     },
+    setMe: (state, action) => {
+      state.me = action.payload;
+    },
   },
 });
 
-export const { setSpaces, setSpaceWithStories } = spacesSlice.actions;
+export const { setSpaces, setSpaceWithStories, setMe } = spacesSlice.actions;
 
 export default spacesSlice.reducer;

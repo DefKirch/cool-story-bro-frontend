@@ -1,5 +1,15 @@
 import "./styles.css";
-const StoryCard = ({ name, content, image, bgColor, color }) => {
+import { RiDeleteBinLine } from "react-icons/ri";
+const StoryCard = ({
+  id,
+  name,
+  content,
+  image,
+  bgColor,
+  color,
+  handleDeleteStory,
+  isMySpace,
+}) => {
   return (
     <div style={{ backgroundColor: bgColor, color }}>
       <div className="StoryCard">
@@ -7,6 +17,18 @@ const StoryCard = ({ name, content, image, bgColor, color }) => {
         <div className="StoryCard-Content">
           <p>{content}</p>
           <img className="StoryCard-Image" src={image} alt={`${name}`} />
+          {isMySpace ? (
+            <div className="Delete-Button-Container">
+              <button
+                className="Delete-Button"
+                onClick={() => handleDeleteStory(id)}
+              >
+                <RiDeleteBinLine className="Delete-Button-Icon" />
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
