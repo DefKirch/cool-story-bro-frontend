@@ -14,7 +14,11 @@ const MySpacePage = () => {
 
   const sortStoriesByDate = () => {
     const storiesToSort = [...Me.mySpace.stories];
-    setSortedStories(storiesToSort.sort((a, b) => a.createdAt - b.createdAt));
+    setSortedStories(
+      storiesToSort.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      )
+    );
   };
 
   const handleDeleteStory = (id) => {
