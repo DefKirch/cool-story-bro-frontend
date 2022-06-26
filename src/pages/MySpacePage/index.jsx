@@ -6,9 +6,11 @@ import StoryCard from "../../components/StoryCard";
 import { useState, useEffect } from "react";
 import SpaceHeader from "../../components/SpaceHeader";
 import NewStoryForm from "../../components/NewStoryForm";
+import EditSpaceForm from "../../components/EditSpaceForm";
 const MySpacePage = () => {
   const [sortedStories, setSortedStories] = useState([]);
   const [creatingNewStory, setCreatingNewStory] = useState(false);
+  const [editingMySpace, setEditingMySpace] = useState(false);
   const Me = useSelector(selectMe);
   const dispatch = useDispatch();
 
@@ -28,6 +30,11 @@ const MySpacePage = () => {
   const displayNewPostComponent = () => {
     setCreatingNewStory(!creatingNewStory);
   };
+
+  const displayEditingSpaceComponent = () => {
+    setEditingMySpace(!editingMySpace);
+  };
+
   useEffect(() => {
     if (Me) {
       sortStoriesByDate();
@@ -52,8 +59,10 @@ const MySpacePage = () => {
               bgColor={Me.mySpace.backgroundColor}
               color={Me.mySpace.color}
               displayNewPostComponent={displayNewPostComponent}
+              displayEditingSpaceComponent={displayEditingSpaceComponent}
             />
           </div>
+          {editingMySpace ? <EditSpaceForm /> : ""}
           {creatingNewStory ? (
             <div>
               <NewStoryForm toggleForm={displayNewPostComponent} />
@@ -72,7 +81,7 @@ const MySpacePage = () => {
                 bgColor={Me.mySpace.backgroundColor}
                 color={Me.color}
                 handleDeleteStory={handleDeleteStory}
-                isMySpace={true}
+                isMySpace
               />
             );
           })}

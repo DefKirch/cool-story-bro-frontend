@@ -11,12 +11,14 @@ const NewStoryForm = ({ toggleForm }) => {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const handleNewPost = () => {
-    console.log("Handling the new post");
     dispatch(createNewStory(name, content, imageUrl, Me.mySpace.id));
     toggleForm();
   };
   return (
-    <div className="New-Story-Container">
+    <div
+      className="New-Story-Container"
+      style={{ backgroundColor: Me.mySpace.backgroundColor }}
+    >
       <h2>Post a cool story bro</h2>
       <div className="Forms-Container">
         <div className="Form-Row">
@@ -25,6 +27,9 @@ const NewStoryForm = ({ toggleForm }) => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            style={{
+              opacity: "55%",
+            }}
           ></input>
         </div>
         <div className="Form-Row">
@@ -33,6 +38,9 @@ const NewStoryForm = ({ toggleForm }) => {
             type="text"
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            style={{
+              opacity: "55%",
+            }}
           ></input>
         </div>
         <div className="Form-Row">
@@ -41,6 +49,9 @@ const NewStoryForm = ({ toggleForm }) => {
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
+            style={{
+              opacity: "55%",
+            }}
           ></input>
         </div>
         <div className="Image-Preview-Container">

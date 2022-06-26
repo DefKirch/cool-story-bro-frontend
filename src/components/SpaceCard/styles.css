@@ -6,7 +6,6 @@
 .SpaceCard {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black; */
     justify-content: left;
     width: 40rem;
     margin: 2rem 0;
@@ -29,4 +28,8 @@
 
 .SpaceCard-Link:hover {
     background-color: white;
+}
+
+.SpaceCard {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }

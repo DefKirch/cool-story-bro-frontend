@@ -1,20 +1,24 @@
 import "./styles.css";
 import { CgAdd } from "react-icons/cg";
 import { FiEdit2 } from "react-icons/fi";
+import { useState } from "react";
 const SpaceHeader = ({
   title,
   description,
   bgColor,
   color,
   displayNewPostComponent,
+  displayEditingSpaceComponent,
 }) => {
+  const [creatingNewStory, setCreatingNewStory] = useState(false);
+
   const editMySpace = () => {
-    console.log("Editing my space");
+    displayEditingSpaceComponent();
   };
 
   const postNewStory = () => {
     displayNewPostComponent();
-    console.log("Posting a new story");
+    setCreatingNewStory(!creatingNewStory);
   };
   return (
     <div
@@ -35,7 +39,7 @@ const SpaceHeader = ({
         </div>
         <div className="Post-Button-Container">
           <button className="No-Button-Style" onClick={() => postNewStory()}>
-            <p>Post A Cool Story Bro</p>
+            {creatingNewStory ? <p>Close</p> : <p>Post A Cool Story Bro</p>}
             <CgAdd />
           </button>
         </div>

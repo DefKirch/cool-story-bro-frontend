@@ -9,7 +9,7 @@ const SpaceCard = ({ id, title, description, backgroundColor, color }) => {
   const User = useSelector(selectUser);
 
   const checkIfMySpace = () => {
-    if (id === User.id) {
+    if (User && id === User.id) {
       setRoute("/mySpace");
     }
   };

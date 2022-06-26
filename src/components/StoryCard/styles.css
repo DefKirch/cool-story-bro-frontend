@@ -37,10 +37,11 @@
 	padding: 0;
 	cursor: pointer;
 	outline: inherit;
+    background-color: rgba(0, 0, 0, 0);
 }
 
-.Delete-Button.Icon:hover {
-    color: tomato;
-    background-color: whitesmoke;
+.Delete-Button:hover {
+    color: rgb(136, 20, 20);
     cursor: pointer;
+    size: 10x;
 }
