@@ -76,3 +76,35 @@ export const createNewStory =
       console.log(e.message);
     }
   };
+
+export const editMySpace =
+  (title, description, bgColor, color, spaceId) =>
+  async (dispatch, getState) => {
+    try {
+      // console.log(title, description, bgColor, color);
+      const token = selectToken(getState());
+      const response = await axios.put(
+        `${URL}/editmyspace/${spaceId}`,
+        {
+          title,
+          description,
+          bgColor,
+          color,
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      dispatch(fetchMySpace());
+      dispatch(
+        showMessageWithTimeout(
+          "success",
+          false,
+          "Space edited succesfully!",
+          1500
+        )
+      );
+    } catch (e) {
+      console.log(e.message);
+    }
+  };

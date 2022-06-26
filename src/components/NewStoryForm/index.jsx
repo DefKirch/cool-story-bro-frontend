@@ -17,7 +17,10 @@ const NewStoryForm = ({ toggleForm }) => {
   return (
     <div
       className="New-Story-Container"
-      style={{ backgroundColor: Me.mySpace.backgroundColor }}
+      style={{
+        backgroundColor: Me.mySpace.backgroundColor,
+        color: Me.mySpace.color,
+      }}
     >
       <h2>Post a cool story bro</h2>
       <div className="Forms-Container">

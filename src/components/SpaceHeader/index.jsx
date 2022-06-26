@@ -1,5 +1,5 @@
 import "./styles.css";
-import { CgAdd } from "react-icons/cg";
+import { CgAdd, CgClose } from "react-icons/cg";
 import { FiEdit2 } from "react-icons/fi";
 import { useState } from "react";
 const SpaceHeader = ({
@@ -11,9 +11,11 @@ const SpaceHeader = ({
   displayEditingSpaceComponent,
 }) => {
   const [creatingNewStory, setCreatingNewStory] = useState(false);
+  const [editingMySpace, setEditingMySpace] = useState(false);
 
   const editMySpace = () => {
     displayEditingSpaceComponent();
+    setEditingMySpace(!editingMySpace);
   };
 
   const postNewStory = () => {
@@ -32,15 +34,41 @@ const SpaceHeader = ({
       <p>{description}</p>
       <div className="Edit-Post-Container">
         <div className="EditSpace-Button-Container">
-          <button className="No-Button-Style" onClick={() => editMySpace()}>
-            <p>Edit my Space</p>
-            <FiEdit2 />
+          <button
+            className="No-Button-Style"
+            style={{ color }}
+            onClick={() => editMySpace()}
+          >
+            {editingMySpace ? (
+              <>
+                <p>Discard Changes</p>
+                <CgClose />
+              </>
+            ) : (
+              <>
+                <p>Edit my Space</p>
+                <FiEdit2 />
+              </>
+            )}
           </button>
         </div>
         <div className="Post-Button-Container">
-          <button className="No-Button-Style" onClick={() => postNewStory()}>
-            {creatingNewStory ? <p>Close</p> : <p>Post A Cool Story Bro</p>}
-            <CgAdd />
+          <button
+            className="No-Button-Style"
+            style={{ color }}
+            onClick={() => postNewStory()}
+          >
+            {creatingNewStory ? (
+              <>
+                <p>Close</p>
+                <CgClose />
+              </>
+            ) : (
+              <>
+                <p>Post A Cool Story Bro</p>
+                <CgAdd />
+              </>
+            )}
           </button>
         </div>
       </div>

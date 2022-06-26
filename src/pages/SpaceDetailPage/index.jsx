@@ -26,7 +26,7 @@ const SpaceDetailPage = () => {
   useEffect(() => {
     dispatch(fetchSpaceWithStories(id));
   }, [dispatch, id]);
-  console.log(oneSpace);
+  // console.log(oneSpace);
   return (
     <div>
       {oneSpace ? (

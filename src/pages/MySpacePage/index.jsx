@@ -55,7 +55,7 @@ const MySpacePage = () => {
             <h2>My Space</h2>
             <SpaceHeader
               title={Me.mySpace.title}
-              description={Me.mySpace.desccription}
+              description={Me.mySpace.description}
               bgColor={Me.mySpace.backgroundColor}
               color={Me.mySpace.color}
               displayNewPostComponent={displayNewPostComponent}
@@ -79,7 +79,7 @@ const MySpacePage = () => {
                 content={story.content}
                 image={story.imageUrl}
                 bgColor={Me.mySpace.backgroundColor}
-                color={Me.color}
+                color={Me.mySpace.color}
                 handleDeleteStory={handleDeleteStory}
                 isMySpace
               />
